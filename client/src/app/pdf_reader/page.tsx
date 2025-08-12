@@ -1,6 +1,5 @@
 "use client";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { formatBoldDefinitions } from "@/utils/functions";
 import { ENDPOINTS } from '@/utils/urls';
 import { Viewer, Worker } from '@react-pdf-viewer/core';
 import '@react-pdf-viewer/core/lib/styles/index.css';
@@ -59,7 +58,7 @@ function Paage() {
       .then((res) => {
         console.log("eikhane asche", res.data.msg);
         setLoading(false);
-        setexplain_response(formatBoldDefinitions(res.data.explanation));
+        setexplain_response(res.data.explanation);
         setshowresponse(true)
 
       })
